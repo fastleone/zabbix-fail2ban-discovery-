@@ -59,6 +59,7 @@ Status
 |- Number of jail:      2
 `- Jail list:   pure-ftpd, sshd
 ```
+groupadd fail2ban && usermod -a -G fail2ban zabbix && chown root:fail2ban /var/run/fail2ban/fail2ban.sock && chmod g+rwx /var/run/fail2ban/fail2ban.sock && su - zabbix --shell=/bin/bash -c ' fail2ban-client status'
 
 The response above with list of jails means that everything works fine. Sometimes you may see a warning:
 
